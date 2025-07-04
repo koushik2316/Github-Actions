@@ -44,7 +44,7 @@ jobs:
   
   test:
     runs-on: self-hosted
-    needs: compile
+    needs: security
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
@@ -58,7 +58,7 @@ jobs:
 
   build_project_and_sonar_scan:
     runs-on: self-hosted
-    needs: compile
+    needs: test
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
