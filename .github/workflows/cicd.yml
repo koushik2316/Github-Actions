@@ -101,7 +101,6 @@ jobs:
     - name: Download JAR Artifact
       uses: actions/download-artifact@v4
       with:
-        context: .
         name: app-jar
         path: app # this will download JAR to ./app folder
 
@@ -117,6 +116,7 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v6
       with:
+        context: .
         push: true
         tags: koushikn23/bankapp:latest
     
